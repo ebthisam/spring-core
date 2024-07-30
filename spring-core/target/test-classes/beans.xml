@@ -1,0 +1,282 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+
+xmlns:context= "http://www.springframework.org/schema/context"
+
+xsi:schemaLocation="http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
+
+>
+
+
+
+<!-- <bean name="rect" class="com.iiht.iocday2.Rectangle" scope="" init-method="init" destroy-method="destroy">
+
+	<property name="length" value="25.765"></property>
+
+	<property name="breadth" value="23.432"></property>
+
+</bean>
+
+
+
+<bean name="tria" class="com.iiht.iocday2.Triangle">
+
+	<property name="base" value="10.000"></property>
+
+	<property name="height" value="5.000"></property>
+
+	
+
+</bean>
+
+<bean name="rhomb" class="com.iiht.iocday2.Rhombus"><property name="length" value="7.000"></property>
+
+	
+
+</bean>
+
+
+
+<bean name="a1" class="com.iiht.ioc.A">
+
+	<constructor-arg name="name" value="John Doe"></constructor-arg>
+
+	<constructor-arg name="gender" value="Male"></constructor-arg> 
+
+	
+
+</bean>
+
+<bean name="a2" class="com.iiht.ioc.A">
+
+	<property name="name" value="John Doe"></property>
+
+	<property name="gender" value="Female"></property> 
+
+	
+
+</bean>
+
+<bean name="a3" class="com.iiht.ioc.A">
+
+	<property name="name" value="james Doe"></property>
+
+	<property name="gender" value="Female"></property> 
+
+	
+
+</bean>
+
+<bean name="a4" class="com.iiht.ioc.A">
+
+	<property name="name" value="Janet Doe"></property>
+
+	<property name="gender" value="Female"></property> </bean>
+
+	
+
+
+
+<bean name="point1" class="com.iiht.iocline.Point">
+
+	<property name="x" value="10.00"></property>
+
+	<property name="y" value="11.00"></property>
+
+	
+
+</bean>
+
+<bean name="point2" class="com.iiht.iocline.Point">
+
+	<property name="x" value="18.00"></property>
+
+	<property name="y" value="21.00"></property>
+
+	
+
+</bean>
+
+<bean name="pointTeam" class="com.iiht.iocline.Line" autowire="constructor" >
+
+	<constructor-arg>
+
+		
+
+			<ref bean="p1" />
+
+			<ref bean="p2"/>
+
+		
+
+	</constructor-arg>
+
+	
+
+</bean>
+
+
+
+
+
+<bean name="javaTeam" class="com.iiht.ioc.Members" autowire="constructor">
+
+	<constructor-arg>
+
+		<list>
+
+		<ref bean="a1" />
+
+		<ref bean="a2" />
+
+		
+
+		</list>
+
+	</constructor-arg>
+
+	<property name="members">
+
+		<list>
+
+			<ref bean="a3"/>
+
+		<ref bean="a4"/>
+
+		</list></property>
+
+	
+
+</bean> -->
+
+<!-- 
+   <bean id="egg1" class="com.iiht.ioc.Eggs">
+        <constructor-arg value="12"/>
+        <constructor-arg value="HappyFarm"/>
+        <constructor-arg value="715"/>
+    </bean>
+
+    <bean id="egg2" class="com.iiht.ioc.Eggs">
+        <constructor-arg value="24"/>
+        <constructor-arg value="FarmFresh"/>
+        <constructor-arg value="21"/>
+    </bean>
+
+    <bean id="apple1" class="com.iiht.ioc.Apples">
+        <constructor-arg value="20"/>
+        <constructor-arg value="GreenAppleCo"/>
+        <constructor-arg value="210"/>
+    </bean>
+
+    <bean id="apple2" class="com.iiht.ioc.Apples">
+        <constructor-arg value="30"/>
+        <constructor-arg value="RedAppleCo"/>
+        <constructor-arg value="215"/>
+    </bean>
+
+    <bean id="milk1" class="com.iiht.ioc.Milk">
+        <constructor-arg value="10"/>
+        <constructor-arg value="DairyDelight"/>
+        <constructor-arg value="25"/>
+    </bean>
+
+    <bean id="milk2" class="com.iiht.ioc.Milk">
+        <constructor-arg value="15"/>
+        <constructor-arg value="PureMilk"/>
+        <constructor-arg value="20"/>
+    </bean>
+
+    <bean id="chocolate1" class="com.iiht.ioc.Chocolate">
+        <constructor-arg value="50"/>
+        <constructor-arg value="SweetTreats"/>
+        <constructor-arg value="30"/>
+    </bean>
+
+    <bean id="chocolate2" class="com.iiht.ioc.Chocolate">
+        <constructor-arg value="40"/>
+        <constructor-arg value="ChocoDelights"/>
+        <constructor-arg value="25"/>
+    </bean>
+
+    <bean id="bread1" class="com.iiht.ioc.Bread">
+        <constructor-arg value="15"/>
+        <constructor-arg value="BreadBakery"/>
+        <constructor-arg value="720"/>
+    </bean>
+
+    <bean id="bread2" class="com.iiht.ioc.Bread">
+        <constructor-arg value="10"/>
+        <constructor-arg value="DailyBread"/>
+        <constructor-arg value="805"/>
+    </bean>
+
+    <bean id="eggArrayList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="egg1"/>
+                <ref bean="egg2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="milkHashSet" class="java.util.HashSet">
+        <constructor-arg>
+            <set>
+                <ref bean="milk1"/>
+                <ref bean="milk2"/>
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="chocoLinkedList" class="java.util.LinkedList">
+        <constructor-arg>
+            <list>
+                <ref bean="chocolate1"/>
+                <ref bean="chocolate2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="appleTree" class="java.util.TreeSet">
+        <constructor-arg>
+            <set>
+                <ref bean="apple1"/>
+                <ref bean="apple2"/>
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="breadQueue" class="java.util.LinkedList">
+        <constructor-arg>
+            <list>
+                <ref bean="bread1"/>
+                <ref bean="bread2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="storeMap" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="1" value-ref="eggArrayList"/>
+                <entry key="2" value-ref="milkHashSet"/>
+                <entry key="3" value-ref="chocoLinkedList"/>
+                <entry key="4" value-ref="appleTree"/>
+                <entry key="5" value-ref="breadQueue"/>
+            </map>
+        </constructor-arg> 
+    </bean>-->
+
+
+
+
+
+
+
+</beans>
+
+
+
+
+
